@@ -5,7 +5,12 @@ import Buttons from './components/actions'
 const Layout: React.FunctionComponent = () => {
     return (
         <div>
-            <Board />
+            <Board
+                arrState={[
+                    ['#ff0000', '#ff0000'],
+                    ['#0000ff', '#0000ff'],
+                ]}
+            />
             <Buttons />
         </div>
     )
