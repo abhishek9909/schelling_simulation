@@ -1,0 +1,22 @@
+{
+  "person": {
+    "name": "Alex Thompson",
+    "age": 32,
+    "height": "6 feet",
+    "build": "Athletic",
+    "background": {
+      "origin": "Small town",
+      "ethnicity": "Asian",
+      "profession": "Marketing",
+      "education": [
+        {
+          "degree": "Bachelor's in Psychology"
+        },
+        {
+          "degree": "Master's in Business Administration"
+        }
+      ]
+    },
+    "personality": ["Business-minded", "Fitness freak"]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "currentProfile": {
+    "person": {
+      "name": "Alex Thompson",
+      "age": 32,
+      "height": "6 feet",
+      "build": "Athletic",
+      "background": {
+        "origin": "Small town",
+        "ethnicity": "Asian",
+        "profession": "Marketing",
+        "education": [
+          {
+            "degree": "Bachelor's in Psychology"
+          },
+          {
+            "degree": "Master's in Business Administration"
+          }
+        ]
+      },
+      "personality": ["Business-minded", "Fitness freak"]
+    }
+  },
+  "neighbouringProfiles": [
+    {
+      "person": {
+        "name": "Emily Rodriguez",
+        "age": 28,
+        "height": "5 feet 8 inches",
+        "build": "Slim",
+        "background": {
+          "origin": "Urban upbringing",
+          "ethnicity": "Caucasian",
+          "profession": "Software Developer",
+          "education": [
+            {
+              "degree": "Bachelor's in Computer Science"
+            },
+            {
+              "degree": "Master's in Software Engineering"
+            }
+          ]
+        },
+        "personality": ["Analytical", "Creative", "Detail-oriented"]
+      }
+    },
+    {
+      "person": {
+        "name": "Mia Patel",
+        "age": 35,
+        "height": "5 feet 6 inches",
+        "build": "Curvy",
+        "background": {
+          "origin": "Metropolitan area",
+          "ethnicity": "Indian",
+          "profession": "Medical Doctor",
+          "education": [
+            {
+              "degree": "Bachelor's in Medicine"
+            },
+            {
+              "degree": "Doctor of Medicine (MD)"
+            }
+          ]
+        },
+        "personality": ["Compassionate", "Driven", "Empathetic"]
+      }
+    },
+
+    {
+      "person": {
+        "name": "Jordan Lewis",
+        "age": 29,
+        "height": "6 feet 2 inches",
+        "build": "Muscular",
+        "background": {
+          "origin": "Rural community",
+          "ethnicity": "African American",
+          "profession": "Civil Engineer",
+          "education": [
+            {
+              "degree": "Bachelor's in Civil Engineering"
+            },
+            {
+              "degree": "Master's in Structural Engineering"
+            }
+          ]
+        },
+        "personality": ["Pragmatic", "Team-oriented", "Goal-driven"]
+      }
+    }
+  ]
+}
