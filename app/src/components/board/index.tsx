@@ -15,7 +15,7 @@ const Board: React.FunctionComponent<IBoardProps> = ({ arrState }) => {
                         {row.map((cell) => (
                             <TableCell
                                 style={{
-                                    background: cell,
+                                    background: cell ?? '#fff',
                                     border: '1px solid black',
                                 }}
                             />
