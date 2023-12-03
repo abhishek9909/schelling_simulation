@@ -1,0 +1,6 @@
+[
+  {
+    "name": "move_location",
+    "description": "Move location from current position to an empty position because of dissatisfaction"
+  }
+]
