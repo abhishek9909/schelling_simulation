@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IActionManager } from '../types'
+import { AgentStrategy, IActionManager } from '../types'
 import { prepareArrState } from '../../logic/helper'
 
 const useActionManager: () => IActionManager = () => {
@@ -9,15 +9,20 @@ const useActionManager: () => IActionManager = () => {
         prepareArrState(50, 25, 10)
     )
     const [delay, setDelay] = React.useState<number>(100)
+    const [strategy, setStrategy] = React.useState<AgentStrategy>(
+        AgentStrategy.Random
+    )
     return {
         currentRound: currentRound,
         arrState: arrState,
         delay: delay,
         affinity: affinity,
+        strategy: strategy,
         setCurrentRound: setCurrentRound,
         setArrState: setArrState,
         setDelay: setDelay,
         setAffinity: setAffinity,
+        setStrategy: setStrategy,
     }
 }
 

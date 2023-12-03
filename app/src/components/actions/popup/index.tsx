@@ -2,13 +2,18 @@ import {
     Button,
     Dialog,
     DialogTitle,
+    FormControl,
+    FormControlLabel,
+    FormLabel,
     List,
     ListItem,
+    Radio,
+    RadioGroup,
     Slider,
     Stack,
 } from '@mui/material'
 import * as React from 'react'
-import { IActionManager } from '../../../manager/types'
+import { AgentStrategy, IActionManager } from '../../../manager/types'
 import {
     calculateEmptyPercentage,
     calculateRedPercentage,
@@ -25,11 +30,13 @@ const Popup: React.FunctionComponent<IPopupProps> = ({
     arrState,
     delay,
     affinity,
+    strategy,
     setIsOpen,
     setDelay,
     setAffinity,
     setArrState,
     setCurrentRound,
+    setStrategy,
 }) => {
     const [nativeDelay, setNativeDelay] = React.useState<number>(delay)
     const [emptyPer, setEmptyPer] = React.useState<number>(
@@ -40,6 +47,8 @@ const Popup: React.FunctionComponent<IPopupProps> = ({
     const [redVsBlue, setRedVsBlue] = React.useState<number>(
         calculateRedPercentage(arrState)
     )
+    const [nativeStrategy, setNativeStrategy] =
+        React.useState<AgentStrategy>(strategy)
 
     const _onApplyClick = () => {
         setDelay(nativeDelay)
@@ -47,10 +56,12 @@ const Popup: React.FunctionComponent<IPopupProps> = ({
         setCurrentRound(0)
         setArrState(prepareArrState(redVsBlue, emptyPer, size))
         setIsOpen(false)
+        setStrategy(nativeStrategy)
     }
 
     const _onCloseClick = () => {
         setNativeDelay(delay)
+        setNativeStrategy(strategy)
         setSimilarity(affinity)
         setEmptyPer(calculateEmptyPercentage(arrState))
         setRedVsBlue(calculateRedPercentage(arrState))
@@ -87,6 +98,34 @@ const Popup: React.FunctionComponent<IPopupProps> = ({
                     templateString="Delay: {value} ms"
                     handleSetChange={setNativeDelay}
                 />
+                <FormControl>
+                    <FormLabel>Strategy</FormLabel>
+                    <RadioGroup
+                        value={nativeStrategy}
+                        onChange={(ev) => {
+                            const stringValue = (
+                                event?.target as HTMLInputElement
+                            ).value
+                            setNativeStrategy(stringValue as AgentStrategy)
+                        }}
+                    >
+                        <FormControlLabel
+                            value={AgentStrategy.Random}
+                            label="random"
+                            control={<Radio />}
+                        />
+                        <FormControlLabel
+                            value={AgentStrategy.Greedy}
+                            label="greedy"
+                            control={<Radio />}
+                        />
+                        <FormControlLabel
+                            value={AgentStrategy.Nearest}
+                            label="nearest"
+                            control={<Radio />}
+                        />
+                    </RadioGroup>
+                </FormControl>
             </List>
             <Button variant="outlined" onClick={_onApplyClick}>
                 Apply
