@@ -21,7 +21,7 @@ const Actions: React.FunctionComponent<IActionManager> = (actions) => {
         setIsSimulationRunning(true)
         const nativeTimer = setInterval(() => {
             actions.setArrState((arrState) =>
-                progressArrState(arrState, actions.affinity)
+                progressArrState(arrState, actions.affinity, actions.strategy)
             )
             actions.setCurrentRound((rnd) => rnd + 1)
         })
@@ -40,7 +40,7 @@ const Actions: React.FunctionComponent<IActionManager> = (actions) => {
     const _onStepClick = () => {
         _onPauseClick()
         actions.setArrState((arrState) =>
-            progressArrState(arrState, actions.affinity)
+            progressArrState(arrState, actions.affinity, actions.strategy)
         )
         actions.setCurrentRound((rnd) => rnd + 1)
     }
@@ -123,6 +123,10 @@ const Actions: React.FunctionComponent<IActionManager> = (actions) => {
                     <AttributeItem
                         value={actions.arrState.length}
                         templateString="Size: {value}x{value}"
+                    />
+                    <AttributeItem
+                        templateString={`Strategy: ${actions.strategy}`}
+                        value={0}
                     />
                 </Stack>
             </Stack>
